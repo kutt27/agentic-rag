@@ -1,0 +1,38 @@
+[project]
+name = "agentic-rag"
+version = "0.1.0"
+description = "Agentic RAG with S3 integration"
+readme = "plan.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.0",
+    "pydantic-ai>=0.0.13",
+    "pydantic-settings>=2.0",
+    "boto3>=1.35",
+    "aiofiles>=23.0",
+    "nest-asyncio>=1.5",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "ruff>=0.1",
+    "mypy>=1.0",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 88
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.mypy]
+python-version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
